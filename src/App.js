@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Navbar from "./components/Navbar";
 import Booklist from "./components/Booklist";
 import ThemeContextProvider from "./contexts/ThemeContext";
+import AuthContextProvider from "./contexts/AuthContext";
 import Toogle from "./components/Toogle";
 
 class App extends Component {
@@ -9,9 +10,11 @@ class App extends Component {
     return (
       <div className="App">
         <ThemeContextProvider>
-          <Navbar />
-          <Booklist />
-          <Toogle />
+          <AuthContextProvider>
+            <Navbar />
+            <Booklist />
+            <Toogle />
+          </AuthContextProvider>
         </ThemeContextProvider>
       </div>
     );
